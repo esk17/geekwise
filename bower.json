@@ -1,0 +1,21 @@
+{
+  "name": "myStore",
+  "version": "0.0.0",
+  "homepage": "https://github.com/esk17/geekwise",
+  "authors": [
+    "Jose Cabrera Jr <lalocabrera17@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.10"
+  }
+}
