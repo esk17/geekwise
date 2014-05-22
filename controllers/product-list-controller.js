@@ -3,15 +3,15 @@
 
 	var app = angular.module('MyStore');
 
-app.controller('ProductList', function($scope, $http) {
+app.controller('ProductList', function($scope, ProductService) {
 
 	var errorCallback = function(reason) {
 		$scope.errorMessage = reason.statusText;
 	}; 
 
 
-	$http.get('assets/json/products.json')
-		.then(
+	
+		ProductService.getProducts().then(
 			function(response) {
 				$scope.products = response.data;
 					$scope.filters = response.data;
@@ -20,8 +20,8 @@ app.controller('ProductList', function($scope, $http) {
 		
 		);
 
-		$http.get('assets/json/product-filters.json')
-			.then(
+		
+			ProductService.getProductsFilters().then(
 				function(response) {
 					$scope.filters = response.data;
 				}, errorCallback
