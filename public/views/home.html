@@ -1,0 +1,37 @@
+<!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <h1>MyStore Application</h1>
+            <p>This is a basic html page that we will be updating to display the e-commerce website we will be creating throughout this course.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="#products" role="button">View Products</a>
+            </p>
+            
+        </div>
+
+  <div id="wrap">
+    <div class="featured">
+      <div class="full">
+        <div class="banner">
+          <h1>Featured</h1>
+        </div>
+        <div class="product_desc">
+          <h2 ng-bind="FeaturedProducts[0].title"></h2>
+          <div class="description">
+          <p ng-bind="FeaturedProducts[0].description"></p>
+          </div>
+          <div class="call_to_action">
+            <a class="button" href="#">Read More</a>
+          </div>
+      </div>
+      </div>
+      
+      <div class="row">
+      <div class="small">
+        <div class="three" ng-repeat="item in FeaturedProducts | limitTo:4" ng-if="!$first">
+          <ms-featured-product product="item"></ms-featured-product>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div> 
+        
