@@ -12,10 +12,7 @@
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'templates/mini-cart.html',
-			link: function(scope. elem, attr) {
-				scope.cartSubtotal = function() {
-					// Return the subtotal form the CartService
-
+			link: function(scope, elem, attr) {
 				scope.cartSubtotal = CartService.getCartSubtotal;
 
 				scope.itemCount = CartService.getItemCount;

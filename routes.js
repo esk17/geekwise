@@ -1,8 +1,9 @@
 module.exports = function(app) {
  
-	// Require mongoose dependency
+	// Require dependenices
 	var mongoose = require('mongoose');
- 
+ 	var passport = require('passport');
+
 	/* ======================= server routes ====================== */
 	// handle things like api calls
 	// authentication routes
@@ -32,6 +33,32 @@ module.exports = function(app) {
 			if(err) res.send(err);
 
 			res.send(products);
+		});
+	});
+
+	/* Add the following routes after the products routes */
+	// logout API route
+	app.get('/api/logout', function(req, res, next) {
+		req.logout();
+		res.send(200);
+	});
+ 
+	// login API route
+	app.post('/api/login', passport.authenticate('local'), function(req, res) {
+		res.cookie('user', JSON.stringify(req.user));
+		res.send(req.user);
+	});
+ 
+	// signup API route
+	app.post('/api/signup', function(req, res, next) {
+		var User = mongoose.model('User');
+		var user = new User({
+			email: req.body.email,
+			password: req.body.password
+		});
+		user.save(function(err) {
+			if (err) return next(err);
+			res.send(200);
 		});
 	});
 

@@ -1,5 +1,4 @@
 <div>
-
 	<ms-mini-cart></ms-mini-cart>
 	<div class="filters">
 		<div class="filter-block" ng-repeat="filter in filters">
@@ -31,7 +30,7 @@
 			<div class='title' ng-bind="product.title"></div>
 			<div class='show-base'>
 			  <!-- product thumbnail -->
-				<img ng-src="{{product.thumbnail}}" alt="{{product.title}}" />
+				<img ng-src="{{product.thumbnail}}" alt="{{ product.title }}" />
 				<div class="mask">
 				  <!-- Product title -->
 					<h2 ng-bind="product.title"></h2>
@@ -44,7 +43,7 @@
 					</div>
 					<div>
 						<ms-product-details-button product-id="{{product.guid}}"></ms-product-details-button>
-						<a href="#" class="tocart">To Cart</a>
+						<ms-add-cart product="product"></ms-add-cart>
 					</div>
 				</div>
 			</div>

@@ -22,6 +22,11 @@
                 controller: 'ProductDetail',
                 templateUrl: 'views/product-detail.html'
 			})
+			.state('cart', {
+				url: '/cart',
+				controller: 'CartController',
+				templateUrl: 'views/cart.html'
+			})
 			.state('about', {
 				url: '/about',
 				template: '<h1>About</h1>'
@@ -30,11 +35,18 @@
 				url: '/contact',
 				template: '<h1>Contact</h1>'
 			})
-			.state('cart', {
-				url: '/cart',
-				controller: 'CartController',
-				templateUrl: 'views/cart.html'
+			.state('login', {
+				url: '/login',
+				controller: 'LoginController',
+				templateUrl: 'views/login.html'
 			})
+			.state('signup', {
+				url: '/signup',
+				controller: 'SignupController',
+				templateUrl: 'views/signup.html'
+			});
+
+			
 	
 	});
 
